@@ -21,3 +21,10 @@
 * Buradaki Sanal makinemiz içerisine Provizyon kısmında belirtilen yerden hazır template çekilip httpd web servisimizin template kısmına aktarılmış olacaktır.
 * Statik IP adresiyle bağlanabileceğimiz ve hazır template kullanan bir httpd web sitemiz olacaktır.
 * Dilerseniz Provizyon kısmını özelleştirip kendizine ait web sitenizi Otomatik olarak oluşturabilirsiniz. 
+
+## wordpressIAC
+* Burada ise wordpress kurulumunu manuel kurmak yerine bizim için VM yapmaktadır.
+* Statik IP adresi ile wordpress sitemize erişebiliriz.
+## multiVM
+* Burada birden fazla Sanal makineyi tek bir Vagrantfile ile oluşturabiliriz
+* Dilersek dosyamızı ve kaynaklarını özelleştirebiliriz.
