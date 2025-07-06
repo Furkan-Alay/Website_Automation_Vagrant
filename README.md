@@ -1,30 +1,51 @@
-# Buradaki otomasyonu kullanabilmek için aşağıdaki komutları uygulamanız gerekmektedir.
-* Kendi bilgisayarınızın "C" veya "F" klasörüne kaynak kodumu clone edin.
-* Sanal Makinelerin takibi için Oracle VM makinenize indirebilirsiniz.
-* Gitbash terminalini kurmanız tavsiye edilir.
-* Burada "finance" ve "ubuntu" klasörleri içerisindeki Vagrantfile dosyaları ile sanal makineler kurabilirsiniz.
-* Vagrantfile dosyalarını açarak sanal makinelerinizin konfigürasyon ayarlarını yapabilirsiniz.
-* Burada "centos" ve "ubuntu" adında iki klasör ve Vagrantfile dosyaları bulunmakta.Buradaki Vagrantfile dosyasını vagrant kodlarıyla direkt olarak kontrol edebilirsiniz
-* vagrant up = Vagrantfile özelliklerine göre sanal makine başlatır.
-* vagrant halt = Sanal makineyi durdurur.
-* vagrant destroy= Sanal makineyi siler.
-* vagrant status = Sanal makinenin durumunu ekrana getirir.
-* vagrant global status= Tüm sanal makinelerin durumunu ekrana getirir.
-* vagrant ssh= SSH bağlantısıyla Sanal makinenize bağlanır.
-## finance
-* Buradaki klasörümüzün Vagrantfile dosyasında provizyon işlemi bulunmaktadır yani ön yükleme kısmı bulunuyor.
-* Vagrantfile dosyamızın içerisinde "private network" yorum satırını kaldırıp statik IP adresi vermiş olduk
-* Provizyon kısmında apache web servisini indirecektir.
-* Statik IP adresimizle oluşturmuş olduğumuz apache web servisine tarayıcıdan bağlanabilirsiniz.
-## financeIAC
-* Burada ise Provizyon kısmında belirtilen komutlar uygulanmış olacaktır.
-* Buradaki Sanal makinemiz içerisine Provizyon kısmında belirtilen yerden hazır template çekilip httpd web servisimizin template kısmına aktarılmış olacaktır.
-* Statik IP adresiyle bağlanabileceğimiz ve hazır template kullanan bir httpd web sitemiz olacaktır.
-* Dilerseniz Provizyon kısmını özelleştirip kendizine ait web sitenizi Otomatik olarak oluşturabilirsiniz. 
+# 📄 Project Overview
 
-## wordpressIAC
-* Burada ise wordpress kurulumunu manuel kurmak yerine bizim için VM yapmaktadır.
-* Statik IP adresi ile wordpress sitemize erişebiliriz.
-## multiVM
-* Burada birden fazla Sanal makineyi tek bir Vagrantfile ile oluşturabiliriz
-* Dilersek dosyamızı ve kaynaklarını özelleştirebiliriz.
+This repository contains automation scripts for setting up virtual machines using **Vagrant**. You can easily deploy multiple VMs with predefined configurations and provisioning scripts.
+
+---
+
+## 📌 Requirements
+
+- Install **Git Bash** terminal (recommended for Windows users)
+- Install **Oracle VM VirtualBox**
+- Install **Vagrant**
+
+---
+
+## 📥 How to Use
+
+1. Clone this repository to your local machine (C: or F: drive recommended).
+2. Use the Vagrantfiles located inside the `finance`, `ubuntu`, `centos` and other directories to create and manage virtual machines.
+3. You can customize the VM configurations by editing the corresponding **Vagrantfile**.
+
+---
+
+## 📦 Vagrant Commands
+
+```bash
+vagrant up               # Start the VM based on the Vagrantfile configuration  
+vagrant halt             # Stop the running VM  
+vagrant destroy          # Remove the VM  
+vagrant status           # Show the current status of the VM  
+vagrant global-status    # Show the status of all Vagrant-managed VMs  
+vagrant ssh              # Connect to the VM via SSH  
+```
+# 📂 Project Structure
+### finance
+Contains a Vagrantfile with provisioning scripts. It installs Apache Web Server and assigns a static IP address via the private network. You can access the web server through your browser using the configured static IP.
+
+### financeIAC
+Similar to the finance directory, but includes a provisioning script that fetches a pre-built web template and places it into the Apache server’s directory. You can customize the provisioning to deploy your own website automatically.
+
+### wordpressIAC
+Automates the installation of WordPress. Once the VM is up, you can access your WordPress site through the configured static IP.
+
+### multiVM
+Demonstrates how to manage multiple VMs using a single Vagrantfile. You can customize the VMs and resources as needed.
+
+📌 Notes
+All provisioning steps are handled within each Vagrantfile.
+
+You can easily modify IP addresses, network settings, and provisioning scripts to suit your environment.
+
+Great for practicing Infrastructure as Code (IaC) and VM automation with Vagrant.
