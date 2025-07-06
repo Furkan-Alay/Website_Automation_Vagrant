@@ -44,6 +44,7 @@ Automates the installation of WordPress. Once the VM is up, you can access your 
 Demonstrates how to manage multiple VMs using a single Vagrantfile. You can customize the VMs and resources as needed.
 
 📌 Notes
+
 All provisioning steps are handled within each Vagrantfile.
 
 You can easily modify IP addresses, network settings, and provisioning scripts to suit your environment.
